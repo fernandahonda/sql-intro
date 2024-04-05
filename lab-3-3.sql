@@ -5,8 +5,9 @@ SELECT year, name, MAX (wins)
 FROM teams
 WHERE year >= 1960
 GROUP BY year
-ORDER BY wins DESC
+ORDER BY MAX (wins) DESC
 ;
+--however: be aware that if more than 1 team have the same number of wins, we wouldn't see the second team!
 
 -- Expected result: 61 rows, starting with
 --
